@@ -43,5 +43,18 @@ namespace Lab4Test
 
             Assert.AreEqual(ibl.AddEntry(clue, answer, difficulty, date), InvalidFieldError.InvalidClueLength);
         }
+
+        [Test]
+        public void AddEntryInvalidAnswerTest()
+        {
+            String clue = "Most depressed major";
+            String answer = "CSCSCSCSCSCSCSCSCSCSCS";
+            int difficulty = 2;
+            String date = "10-20-2022";
+
+            Assert.AreEqual(ibl.AddEntry(clue, answer, difficulty, date), InvalidFieldError.InvalidAnswerLength);
+        }
+
+       
     }
 }
